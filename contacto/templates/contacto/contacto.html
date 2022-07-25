@@ -1,0 +1,25 @@
+{% extends 'PetApp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="contenedorFormulario">
+
+    {% if 'valido' in request.GET %}
+
+        <p style="color: rgb(9, 15, 44);">Nos contactaremos a la brevedad Muchas Gracias</p>
+
+    {% endif %}
+    
+    <form action="" method="POST" style="text-align: center;">
+        {% csrf_token %}
+        <table style="color: rgb(9, 15, 44); margin: 20px auto;">{{miFormulario.as_table}}</table>
+        <input type="submit" value="Enviar" style="width: 150px;">
+
+    </form>
+
+
+</div>
+
+{% endblock %}

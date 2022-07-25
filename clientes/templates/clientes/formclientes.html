@@ -1,0 +1,32 @@
+{% extends 'PetApp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h1 style="color: white;">Formulario - Agregar Clientes</h1>
+    
+{% if miformulario.errors %}
+
+<p style="color: red;"> Están mal los datos, revisar</p>
+
+{% endif %}
+
+<form action="" method="POST">{% csrf_token %}
+
+    
+    
+    <table style="color: white;">
+
+        {{ miFormulario.as_table }}
+
+
+    </table>
+
+
+    <input type="submit", value="Enviar">
+
+</form>
+
+
+{% endblock %}

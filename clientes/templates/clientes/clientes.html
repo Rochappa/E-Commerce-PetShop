@@ -1,0 +1,36 @@
+{% extends 'PetApp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<form action="/clientes/busqueda/" method="GET">
+
+    <h3 style="color: white;">Buscar un cliente por Nro. Documento</h3>
+
+    <input type="text" name="busca" id="modelo">
+
+    <input type="submit" value="Buscar">
+
+</form>
+
+<a href="formclientes" class="btn btn-success" > Agregar otro Cliente</a>
+
+    {% for cliente in clientes %}
+    
+    <div><p>
+
+        <h2 style="color: white;">{{cliente.nombre}}  {{cliente.apellido}} / DNI {{cliente.documento}} / Email: {{cliente.email}}</h2>
+        
+    </p></div>
+    <a href=" eliminar/{{ cliente.nombre }}" class="btn btn-danger">Eliminar</a>
+    <a href=" editarcliente/{{ cliente.nombre }}" class="btn btn-info">Editar</a>
+    
+
+ 
+    
+    {% endfor %}
+
+    
+
+{% endblock %}
